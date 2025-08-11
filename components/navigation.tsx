@@ -12,7 +12,7 @@ import { CommandDialogComponent } from "@/components/command-dialog";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Navbar } from "@/components/navbar";
-import { WorkAvailabilityBadge } from "@/components/work-availability-badge";
+// Removed WorkAvailabilityBadge per request
 
 const SCROLL_OFFSET = 200;
 
@@ -61,13 +61,9 @@ export function Navigation() {
           siteMetadata.activeAnnouncement && "sm:top-28 md:top-20 lg:top-12"
         )}
       >
-        {defaultAuthor.availableForWork && (
-          <div className="mx-auto mb-2 text-center sm:hidden">
-            <Link href="/now" aria-label="Go to Now page">
-              <WorkAvailabilityBadge />
-            </Link>
-          </div>
-        )}
+        <div className="mx-auto mb-2 text-center sm:hidden">
+          <span className="font-heading text-xl font-bold">Originalform</span>
+        </div>
         <div className="flex items-center gap-2 rounded-full border-b border-foreground/25 bg-background/95 px-3 py-2 shadow-md supports-[backdrop-filter]:bg-background/60 supports-[backdrop-filter]:bg-clip-padding supports-[backdrop-filter]:backdrop-blur sm:justify-between sm:rounded-none sm:px-3">
           <div className="container mx-auto flex max-w-6xl">
             <div className="flex items-center justify-start">
@@ -82,11 +78,7 @@ export function Navigation() {
                   />
                 </Link>
               </div>
-              {defaultAuthor.availableForWork && (
-                <Link href="/now" aria-label="Go to Now page" className="ml-2 hidden sm:block">
-                  <WorkAvailabilityBadge />
-                </Link>
-              )}
+              <span className="ml-2 hidden font-heading text-sm font-bold sm:block">Originalform</span>
             </div>
             <div className="order-3 sm:order-2 sm:ml-auto">
               <nav className="ml-auto hidden space-x-6 text-sm font-medium sm:block sm:w-full">
